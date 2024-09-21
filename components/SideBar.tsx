@@ -5,6 +5,7 @@ import React from 'react'
 import { sidebarLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import Footer from './Footer'
 
 const SideBar = ({ user }: SiderbarProps) => {
     const pathname = usePathname();
@@ -51,6 +52,7 @@ const SideBar = ({ user }: SiderbarProps) => {
         </nav>
 
     <p className='sidebar-logo'>FOOTER placeholder</p>
+    <Footer user={user} type='desktop'/> 
     </section>
   )
 }
