@@ -6,7 +6,8 @@ import {
   PlaidLinkOptions,
   usePlaidLink,
 } from 'react-plaid-link';
-import { createLinkToken, exchangePublicToken } from '@/lib/actions/user.action';
+import { createLinkToken, exchangePublicToken } from '@/lib/actions/user.actions';
+import Image from 'next/image';
 
 const PlaidLink = ({user,variant}:PlaidLinkProps) => {
     const router = useRouter();
@@ -51,12 +52,19 @@ const PlaidLink = ({user,variant}:PlaidLinkProps) => {
         </Button>
     ) : (
         variant === 'ghost' ? (
-            <Button>
+            <Button variant='ghost' className='plaidlink-ghost' onClick={() => open()}>
                 Connect bank
+              <p className='hiddenl text-16 font-semibold text-black-2'>Connect bank</p>
             </Button>
         ) : (
-            <Button>
-                Connect bank
+            <Button className='plaidlink-default' onClick={() => open()}>
+              <Image 
+              src={'/icons/connect-bank.svg'}
+              alt='connect bank'
+              width={24}
+              height={24}
+              />
+              <p className='text-16 font-semibold text-black-2'>Connect bank</p>
             </Button>
         )
     )}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { logoutAccount } from '@/lib/actions/user.action'
+import { logoutAccount } from '@/lib/actions/user.actions'
 import { useRouter } from 'next/navigation'
 
 const Footer = ({user, type= "desktop"}: FooterProps) => {
@@ -17,7 +17,7 @@ const Footer = ({user, type= "desktop"}: FooterProps) => {
     <footer className='footer'>
         <div className={type === 'mobile' ? ('footer_name-mobile') : ('footer_name')}>
             <p className='text-xl font-bold tex-gray-700'>
-                {user.name[0]}
+                {user.firstName[0]}
             </p>
 
         </div>

@@ -23,7 +23,7 @@ import CustomInput from './CustomInput';
 import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.action';
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
 import PlaidLink from './PlaidLink';
 
 const AuthForm = ( {type}:{ type: string } ) => {
@@ -81,12 +81,14 @@ const onSubmit = async (data: z.infer<typeof formSchema>) => {
 
             if(response)
             {
-                router.push('/');
+                console.log('success getting reponse');
+                router.push("/");
             }
 
         }
         
     } catch (error) {
+        console.log('Error in signing in');
         console.log(error);
         
     }
