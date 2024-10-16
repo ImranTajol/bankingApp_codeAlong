@@ -36,5 +36,7 @@ The elements within a page comprises of multiple components to create a user fri
 [types](/types) - define object types 
 
 Plaid - Account Authentication (work together with Dwolla) 
+
 Dwolla - Integrate bank payment functionality
+
 Sentry - Software monitoring tool that helps developers identify and debug performance issues and errors
